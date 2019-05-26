@@ -2,11 +2,11 @@
 
 ## Запуск с babel'ем
 
-[example-node-server](https://github.com/babel/example-node-server)
-[примеры скриптов запуска в `package.json`](https://github.com/comerc/yobr)
-[полное описание настроики и запуска node-приложения](https://github.com/UsulPro/js-stack-from-scratch)
-[шаблон проекта от предыдущего туториала](https://github.com/verekia/js-stack-boilerplate/tree/master-no-services)
-[backpack - сборщик бэкенда](https://github.com/jaredpalmer/backpack)
+- [example-node-server](https://github.com/babel/example-node-server)
+- [примеры скриптов запуска в `package.json`](https://github.com/comerc/yobr)
+- [полное описание настроики и запуска node-приложения](https://github.com/UsulPro/js-stack-from-scratch)
+- [шаблон проекта от предыдущего туториала](https://github.com/verekia/js-stack-boilerplate/tree/master-no-services)
+- [backpack - сборщик бэкенда](https://github.com/jaredpalmer/backpack)
 
 ## Примеры приложений
 
@@ -120,7 +120,8 @@
 - `fastify` - более быстрая замена express'у
 - `server` - обёртка над `express`, с блэкджеком, async/await'ами и нормально настроенными минимально необходимыми мидлварями из коробки
 - `express-promise-router` - нормальная promise-обёртка для всех методов роутера
-- `express-rate-limit`, `express-brute` - мидлваря для предотвращения брута, похож на rate-limit
+- `express-rate-limit` / `rate-limiter-flexible`
+- `express-brute` - мидлваря для предотвращения брута, похож на rate-limit
 - [pillarjs](https://github.com/pillarjs) - много low-level вкусняшек
 - `express-generator`
 - `compression`
@@ -361,7 +362,7 @@ app.set('x-powered-by', false);
 - `pg` / `pg-native` / `pg-promise`, `pg-format` - расширенный prepare statements, [пример](https://github.com/brianc/node-postgres/issues/957#issuecomment-200000070)
 - `knex` / `sql` / `squel` / `sqorn` (pg only) - query builder's
 - `bookshelf` / `objection` (лучше) - эти orm поверх `knex`-а / `sequelize` (`sequelize-auto`, `sequelize-definer`, `sequelize-hierarchy`, `sequelize-values`) / `typeorm`
-- `ioredis` / `redis` / `hiredis`, `redlock`
+- `ioredis` / `redis` / `hiredis`, `redlock` (для распределённых блокировок)
 - `reds` - поиск в редисе
 - `rethinkdb`
 - `node-localstorage` (этот держит данные в памяти) / `dom-storage` (этот пишет данные в файл) - localStorage для NodeJS
