@@ -322,11 +322,13 @@ app.set('x-powered-by', false);
 - `move-concurrently` - самое быстрое (на сколько вообще возможно) перемещение файлов
 - `proper-lockfile` - `lock`-файл
 - `steno` - помогает при конкурентной записи в файл - делает все вызовы на запись последовательно
-- `tmp` / `os-tmpdir` / `tempy` / `temp-dir` - работа с временными файлами и директориями
-- `os-homedir`
-- `user-home`
 - `cacache` - умное управление файловым кешем
 - `ssri` - работа с Subresource Integrity
+- `tmp` / `os-tmpdir` / `tempy` / `temp-dir` - работа с временными файлами и директориями
+- `os-homedir`
+- `user-home` - возращает домашнюю директорию текущего юзера ОС
+- `tildify` - `/Users/sindresorhus/dev` -> `~/dev`
+- `untildify` - `~/dev` -> `/Users/sindresorhus/dev`
 
 ### Стримы
 
@@ -710,7 +712,7 @@ app.set('x-powered-by', false);
 - `enqueue`
 - `fastqueue`
 - `argumentable-queue`
-- `generic-pool`
+- `generic-pool` / `tarn` (этот лучше)
 - `denque`
 - `@blakeembrey/deque` - двухсторонняя очередь
 - `node-schedule` - flexible cron-like and not-cron-like job scheduler
