@@ -359,7 +359,7 @@ app.set('x-powered-by', false);
 ### DB
 
 - `mysql2` / `mariasql`
-- `pg` / `pg-native` / `pg-promise`, `pg-format` - расширенный prepare statements, [пример](https://github.com/brianc/node-postgres/issues/957#issuecomment-200000070)
+- `pg` / `pg-native` / `pg-promise`, `pg-format` - расширенный prepare statements, [пример](https://github.com/brianc/node-postgres/issues/957#issuecomment-200000070), `pg-query-stream` - стримы для `pg`
 - `knex` / `sql` / `squel` / `sqorn` (pg only) - query builder's
 - `bookshelf` / `objection` (лучше) - эти orm поверх `knex`-а / `sequelize` (`sequelize-auto`, `sequelize-definer`, `sequelize-hierarchy`, `sequelize-values`) / `typeorm`
 - `ioredis` / `redis` / `hiredis`, `redlock` (для распределённых блокировок)

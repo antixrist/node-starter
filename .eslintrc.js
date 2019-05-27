@@ -51,7 +51,7 @@ module.exports = {
     },
   },
   rules: {
-    'no-console': 0,
+    'no-console': 2,
     'no-plusplus': 2,
     'no-await-in-loop': 1,
 
