@@ -11,4 +11,8 @@ module.exports = {
     directory: './migrations',
     stub: './migrations/migration.stub',
   },
+  seeds: {
+    directory: './seeds',
+    stub: './seeds/seed.stub',
+  },
 };

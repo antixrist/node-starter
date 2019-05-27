@@ -57,7 +57,14 @@ module.exports = {
     {
       files: ['migrations/**/*.js'],
       rules: {
-        'unicorn/filename-case': [2, { case: 'snakeCase' }],
+        'unicorn/filename-case': 0, // [2, { case: 'snakeCase' }]
+        'import/no-commonjs': 0,
+        'node/exports-style': [2, 'module.exports'],
+      },
+    },
+    {
+      files: ['seeds/**/*.js'],
+      rules: {
         'import/no-commonjs': 0,
         'node/exports-style': [2, 'module.exports'],
       },
