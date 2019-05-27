@@ -23,6 +23,9 @@
     "build": "run-s clean babel",
     "dev": "node --stack-trace-limit=1024 -r ./dist/_bootstrap",
     "start": "cross-env NODE_ENV=production node --stack-trace-limit=1024 -r ./dist/_bootstrap",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
     "test": "echo \"No test specified\" && exit 0"
   },
   "lint-staged": {
@@ -65,8 +68,11 @@
     "clarify": "^2.1.0",
     "cross-env": "^5.2.0",
     "dotenv-safe": "^6.1.0",
+    "knex": "^0.16.5",
     "make-promises-safe": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "pg": "^7.11.0",
+    "pg-query-stream": "^2.0.0",
     "signal-exit": "^3.0.2",
     "source-map-support": "^0.5.12",
     "trace": "^3.1.1"
