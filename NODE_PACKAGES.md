@@ -227,8 +227,9 @@ app.set('x-powered-by', false);
 - `dotenv` / `dotenv-safe` (отличается от `dotenv` тем, что проверяет - установлены ли все переменные, которые есть в файле `.env.example`), `env-cmd`
 - `jsonfile`
 - `electrode-confippet`
-- `configstore` - удобно записывать пользовательские конфиги, например
-  [Подход к конфигурации для разных окружений и под docker](https://habrahabr.ru/company/southbridge/blog/334698/)
+- `configstore` - удобно записывать пользовательские конфиги
+
+[Подход к конфигурации для разных окружений и под docker](https://habrahabr.ru/company/southbridge/blog/334698/)
 
 ### Авторизация
 
