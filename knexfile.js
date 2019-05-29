@@ -1,6 +1,11 @@
-const path = require('path');
+const { join } = require('path');
 
-const KNEX_DATA_DIR = process.env.KNEX_CREATOR ? './src/dal' : './dist/dal';
+const KNEX_DATA_DIR = process.env.KNEX_CREATOR ? './src' : './dist';
+/**
+ * @param {string} path
+ * @returns {string}
+ */
+const resolver = path => join(KNEX_DATA_DIR, path);
 
 module.exports = {
   client: 'pg',
@@ -12,11 +17,11 @@ module.exports = {
   migrations: {
     schemaName: null,
     tableName: 'knex_migrations',
-    directory: path.join(KNEX_DATA_DIR, 'migrations'),
-    stub: path.join(KNEX_DATA_DIR, 'migrations/migration.stub'),
+    directory: resolver('dal/migrations'),
+    stub: resolver('dal/migrations/migration.stub'),
   },
   seeds: {
-    directory: path.join(KNEX_DATA_DIR, 'seeds'),
-    stub: path.join(KNEX_DATA_DIR, 'seeds/seed.stub'),
+    directory: resolver('dal/seeds'),
+    stub: resolver('dal/seeds/seed.stub'),
   },
 };
