@@ -73,6 +73,7 @@
     "knex": "^0.16.5",
     "make-promises-safe": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "objection": "^1.6.9",
     "pg": "^7.11.0",
     "pg-query-stream": "^2.0.0",
     "signal-exit": "^3.0.2",
