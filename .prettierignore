@@ -15,5 +15,3 @@
 
 # and files from 'src' directory
 !/src/**
-!/migrations/**
-!/seeds/**

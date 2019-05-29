@@ -1,0 +1,18 @@
+/**
+ * @param {Knex} knex
+ * @returns {Promise<*>}
+ */
+export async function up(knex) {
+  await knex.schema.createTable(TABLE_NAME, t => {
+    t.increments();
+    t.timestamps();
+  });
+}
+
+/**
+ * @param {Knex} knex
+ * @returns {Promise<*>}
+ */
+export async function down(knex) {
+  await knex.schema.dropTable(TABLE_NAME);
+}

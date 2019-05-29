@@ -1,5 +1,8 @@
-/** @param {Knex} knex */
-module.exports.seed = async knex => {
+/**
+ * @param {Knex} knex
+ * @returns {Promise<*>}
+ */
+export async function seed(knex) {
   // Deletes ALL existing entries
   await knex(TABLE_NAME).del();
   // Inserts seed entries
@@ -8,4 +11,4 @@ module.exports.seed = async knex => {
     { id: 2, colName: 'rowValue2' },
     { id: 3, colName: 'rowValue3' },
   ]);
-};
+}

@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+
 const EXTENSIONS = ['.js', '.mjs', '.node'];
 
 module.exports = {
@@ -39,19 +41,35 @@ module.exports = {
     'prettier/babel',
     'prettier/unicorn',
   ],
-  overrides: {
-    files: [
-      // rewrite rules for any config files in project root (including dot-files)
-      '*.{js,mjs}',
-      '.*.{js,mjs}',
-    ],
-    excludedFiles: ['src/**'],
-    rules: {
-      'import/unambiguous': 0,
-      'import/no-commonjs': 0,
-      'node/exports-style': [2, 'module.exports'],
+  overrides: [
+    {
+      files: [
+        // rewrite rules for any config files in project root (including dot-files)
+        '*.{js,mjs}',
+        '.*.{js,mjs}',
+      ],
+      excludedFiles: ['src/**'],
+      rules: {
+        'import/unambiguous': 0,
+        'import/no-commonjs': 0,
+        'node/exports-style': [2, 'module.exports'],
+      },
     },
-  },
+    {
+      files: ['**/migrations/**/*.js'],
+      rules: {
+        'import/no-unused-modules': 0,
+        'unicorn/filename-case': 0, // [2, { case: 'snakeCase' }]
+      },
+    },
+    {
+      files: ['**/seeds/**/*.js'],
+      rules: {
+        'import/no-unused-modules': 0,
+        'import/prefer-default-export': 0,
+      },
+    },
+  ],
   rules: {
     'no-console': 2,
     'no-plusplus': 2,

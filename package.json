@@ -23,10 +23,10 @@
     "build": "run-s clean babel",
     "dev": "node --stack-trace-limit=1024 -r ./dist/_bootstrap",
     "start": "cross-env NODE_ENV=production node --stack-trace-limit=1024 -r ./dist/_bootstrap",
-    "migrate:make": "knex migrate:make",
+    "migrate:make": "cross-env KNEX_CREATOR=1 knex migrate:make",
     "migrate:latest": "knex migrate:latest",
     "migrate:rollback": "knex migrate:rollback",
-    "seed:make": "knex seed:make",
+    "seed:make": "cross-env KNEX_CREATOR=1 knex seed:make",
     "seed:run": "knex seed:run",
     "test": "echo \"No test specified\" && exit 0"
   },
