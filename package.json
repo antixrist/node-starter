@@ -65,6 +65,7 @@
     "clarify": "^2.1.0",
     "cross-env": "^5.2.0",
     "dotenv-safe": "^6.1.0",
+    "eslint-plugin-unicorn": "git+https://github.com/sindresorhus/eslint-plugin-unicorn.git",
     "make-promises-safe": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "signal-exit": "^3.0.2",
@@ -87,7 +88,6 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-sonarjs": "^0.3.0",
-    "eslint-plugin-unicorn": "^8.0.2",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1"
