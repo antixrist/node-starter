@@ -958,7 +958,7 @@ app.set('x-powered-by', false);
 - `pickr-widget` - color picker без привязки к фреймворку
 - `handorgel` - аккордеон без зависимостей
 - `@filamentgroup/tau` - 360° галерея
-- `quill` / `medium-editor` / `pell` / `jodit` / `trix` / [Squire](https://github.com/neilj/Squire) / `woofmark` / `mavon-editor` (на чистом vue) - текстовый редактор
+- `quill` / `medium-editor` / `pell` / `jodit` / `trix` / [Squire](https://github.com/neilj/Squire) / `woofmark` / `mavon-editor` (на чистом vue) / `prosemirror` - текстовый редактор
 - `auto-textarea`
 - `linkifyjs` - оборачивает текстовые ссылки в html-ссылки
 - `sentinel-js` - отслеживает появление dom-элементов с заданным селектором
