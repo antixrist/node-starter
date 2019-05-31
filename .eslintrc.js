@@ -324,6 +324,7 @@ module.exports = {
     'promise/prefer-await-to-callbacks': 2,
 
     /* eslint-plugin-unicorn */
+    // fixable, but instead of `error2` it now uses `error_` (it's very ugly for me)
     'unicorn/catch-error-name': [2, { name: 'error', caughtErrorsIgnorePattern: '^_$' }],
     'unicorn/custom-error-definition': 1, // fixable
     'unicorn/error-message': 2,
@@ -352,6 +353,7 @@ module.exports = {
     // disabled by 'prettier/unicorn' and then fixing them
     'unicorn/number-literal-case': 0,
     'unicorn/prefer-add-event-listener': 0, // frontend, fixable
+    'unicorn/prefer-event-key': 1, // frontend, partly fixable
     'unicorn/prefer-exponentiation-operator': 1, // fixable
     'unicorn/prefer-flat-map': 1, // fixable
     'unicorn/prefer-includes': 1, // fixable
