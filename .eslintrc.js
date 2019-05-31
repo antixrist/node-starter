@@ -278,12 +278,13 @@ module.exports = {
     'import/no-named-default': 2,
     'import/no-namespace': 1,
     'import/no-nodejs-modules': 0,
-    'import/no-relative-parent-imports': 1,
+    'import/no-relative-parent-imports': 0,
     'import/no-restricted-paths': 0,
     'import/no-self-import': 2,
     'import/no-unassigned-import': 0,
     'import/no-unresolved': [2, { commonjs: true }],
-    'import/no-unused-modules': [2, { missingExports: false, unusedExports: true }],
+    // `import/no-unused-modules` is broken for proposals `export-default-from` and `export-namespace-from`
+    'import/no-unused-modules': 0, // [1, { missingExports: false, unusedExports: true }],
     'import/no-useless-path-segments': [2, { noUselessIndex: true }],
     'import/no-webpack-loader-syntax': 2,
     'import/prefer-default-export': 2,
@@ -339,12 +340,18 @@ module.exports = {
     'promise/prefer-await-to-callbacks': 2,
 
     /* eslint-plugin-unicorn */
+    // fixable, but instead of `error2` it now uses `error_` (it's very ugly for me)
     'unicorn/catch-error-name': [2, { name: 'error', caughtErrorsIgnorePattern: '^_$' }],
     'unicorn/custom-error-definition': 1, // fixable
     'unicorn/error-message': 2,
     'unicorn/escape-case': 1, // fixable
-    'unicorn/explicit-length-check': [1, { 'non-zero': 'greater-than' }], // partly fixable
-    'unicorn/filename-case': [2, { case: 'kebabCase' }],
+    'unicorn/explicit-length-check': [2, { 'non-zero': 'greater-than' }], // partly fixable
+    'unicorn/filename-case': [
+      2,
+      {
+        cases: { kebabCase: true, camelCase: true },
+      },
+    ],
     'unicorn/import-index': 1, // fixable
     'unicorn/new-for-builtins': 1, // fixable, prefer to 'no-new-wrappers'
     'unicorn/no-abusive-eslint-disable': 0, // prefer to 'eslint-comments/no-unlimited-disable'
@@ -362,7 +369,9 @@ module.exports = {
     // disabled by 'prettier/unicorn' and then fixing them
     'unicorn/number-literal-case': 0,
     'unicorn/prefer-add-event-listener': 0, // frontend, fixable
+    'unicorn/prefer-event-key': 1, // frontend, partly fixable
     'unicorn/prefer-exponentiation-operator': 1, // fixable
+    'unicorn/prefer-flat-map': 1, // fixable
     'unicorn/prefer-includes': 1, // fixable
     'unicorn/prefer-node-append': 0, // frontend, fixable
     'unicorn/prefer-node-remove': 0, // frontend, fixable
