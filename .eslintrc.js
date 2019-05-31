@@ -1,5 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-
 const EXTENSIONS = ['.js', '.mjs', '.node'];
 
 module.exports = {
@@ -56,17 +54,24 @@ module.exports = {
       },
     },
     {
-      files: ['**/migrations/**/*.js'],
+      files: ['src/**/migrations/**/*.js'],
       rules: {
-        'import/no-unused-modules': 0,
-        'unicorn/filename-case': 0, // [2, { case: 'snakeCase' }]
+        // 'import/no-unused-modules': 0,
+        'unicorn/filename-case': 0,
       },
     },
     {
-      files: ['**/seeds/**/*.js'],
+      files: ['src/**/seeds/**/*.js'],
       rules: {
-        'import/no-unused-modules': 0,
+        // 'import/no-unused-modules': 0,
         'import/prefer-default-export': 0,
+      },
+    },
+    {
+      files: ['src/**/models/**/*.js'],
+      rules: {
+        'global-require': 1,
+        'import/no-dynamic-require': 1,
       },
     },
   ],
