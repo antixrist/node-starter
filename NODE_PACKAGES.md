@@ -504,7 +504,7 @@ app.set('x-powered-by', false);
 - `csv-stringify`, `fast-csv` / `csv-streamify` / `papaparse` / `csv` / `csvtojson`
 - `xml-mapping` - json в xml и обратно
 - `xmldoc`
-- `js-yaml`
+- `yaml` / `js-yaml`
 - `html-tokenize`
 - `JSONStream` / `json-depth-stream` - потоковый парсер огромных json'ов
 - `marked` / `markdown-it` - md2html, `turndown` - html2md, `showdown` - в обе стороны
