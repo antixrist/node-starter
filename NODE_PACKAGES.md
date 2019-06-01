@@ -573,6 +573,7 @@ app.set('x-powered-by', false);
 
 - `js-cookie`
 - `cookie`
+- `cookieparser`
 - `tough-cookie`, `tough-cookie-filestore`
 - `cookies.txt`
 - `react-cookie`
