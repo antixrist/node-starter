@@ -87,7 +87,8 @@
 - `parallelshell` / `npm-run-all` / `concurrently` - для запуска нескольких одновременных задач из `npm run`
 - `better-npm-run`
 - `cross-env` - для кроссплатформенной установки переменных окружения из `npm run`
-- `shelljs` - bash-функции прямо в ноде
+- `shelljs` - cli/bash-функции прямо в ноде
+- `cash` - кроссплатформенные shell-команды, в cli и в самой ноде
 - `shx` - кроссплатформенные bash-функции в скриптах `package.json` (обёртка над `shelljs`)
 - `npm-which` - аналог консольного `which` для наждения бинарников установленных npm-пакетов
 - `precommit-hook` - тулза запускающая npm-скрипты на коммиты
@@ -748,12 +749,13 @@ app.set('x-powered-by', false);
 
 - `nodemailer` / `postmark` / `emailjs`
 - `mailgen` / `mailmason` / [bojler](https://github.com/Slicejack/bojler), `email-templates` - html-шаблоны для мыла
-- `nonprofit-email-service`
+- [`mail-for-good`](https://github.com/freeCodeCamp/mail-for-good)
 - `mailit` - готовый микросервис для отправки email'ов через http-api
 - `premailer` / `inlining` / `juice` - обработка html для email (inline'инг стилей, etc)
 - `mjml` - годный шаблонизатор для email-писем
 - `disposable-email` - база доменов, которые используют сервисы временных email'ов
 - [Bulletproof email buttons](https://buttons.cm/)
+- [Как _принимать_ email'ы](https://habr.com/ru/post/315134/)
 
 ## Изображения
 
