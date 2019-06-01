@@ -393,6 +393,7 @@ module.exports = {
     'sonarjs/cognitive-complexity': [1, 15],
     'sonarjs/max-switch-cases': [2, 20],
     'sonarjs/no-all-duplicated-branches': 2,
+    'sonarjs/no-collapsible-if': 2,
     'sonarjs/no-duplicate-string': [2, 3],
     'sonarjs/no-duplicated-branches': 2,
     'sonarjs/no-element-overwrite': 2,
