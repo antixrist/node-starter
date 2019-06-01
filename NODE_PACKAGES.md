@@ -755,6 +755,7 @@ app.set('x-powered-by', false);
 - `mjml` - годный шаблонизатор для email-писем
 - `disposable-email` - база доменов, которые используют сервисы временных email'ов
 - [Bulletproof email buttons](https://buttons.cm/)
+- [Как _принимать_ email'ы](https://habr.com/ru/post/315134/)
 
 ## Изображения
 
