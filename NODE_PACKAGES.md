@@ -748,7 +748,7 @@ app.set('x-powered-by', false);
 
 - `nodemailer` / `postmark` / `emailjs`
 - `mailgen` / `mailmason` / [bojler](https://github.com/Slicejack/bojler), `email-templates` - html-шаблоны для мыла
-- `nonprofit-email-service`
+- [`mail-for-good`](https://github.com/freeCodeCamp/mail-for-good)
 - `mailit` - готовый микросервис для отправки email'ов через http-api
 - `premailer` / `inlining` / `juice` - обработка html для email (inline'инг стилей, etc)
 - `mjml` - годный шаблонизатор для email-писем
