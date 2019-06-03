@@ -75,7 +75,7 @@
     "cross-env": "^5.2.0",
     "dotenv-safe": "^6.1.0",
     "ioredis": "^4.9.5",
-    "knex": "^0.17.2",
+    "knex": "^0.17.3",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "make-promises-safe": "^5.0.0",
