@@ -1031,6 +1031,7 @@ app.set('x-powered-by', false);
 - `on-full-screen`, `is-full-screen`, `request-full-screen`, `exit-full-screen` / `screenfull.js`
 - `smoothscroll-polyfill`
 - `events-polyfill`
+- `pepjs` - PointerEvents Polyfill
 - `abort-controller`
 - `focus-visible` - [зачем он нужен](https://css-tricks.com/keyboard-only-focus-styles/)
 - `css.escape`
