@@ -771,6 +771,7 @@ app.set('x-powered-by', false);
 - `gify` / `gifski` - делает гифку из видео (второй ещё и высококачественные)
 - `pngjs`, `jpeg-js`
 - `jsqr` - считывалка qr-кодов с изображений
+- `jsbarcode` - генератор шрихкодов (из под ноды в том числе)
 - [image-compressor](https://github.com/xkeshi/image-compressor) - браузерная сжималка (использовать перед отправкой на сервер)
 - [Генерация превьюшек на лету с помощью AWS Lambda, golang, nodejs и nginx](https://habr.com/post/354226/)
 
