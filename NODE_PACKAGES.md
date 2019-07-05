@@ -100,6 +100,7 @@
 - `npm-check` - тулза для обновления зависимостей с консольным ui
 - `is-ci` - проверяет, запущен ли код в ci-окружении
 - `is-ci-cli` - позволяет для разных ci-окружений запускать разные npm-скрипты
+- `is-wsl` - запущен ли процесс из под Windows Subsystem for Linux
 - `in-publish` - обнаружение в npm-scripts факта запуска публикации пакета (во время локальной разработки), чтобы делать что-то, что не нужно делать во время dev-установки
 - `spritesmith` / `sprity` (`sprity-gm`) / `directory-encoder` - генераторы спрайтов и css к ним
 - `svg-mixer` - генератор svg-спрайтов
@@ -146,8 +147,6 @@
 -
 - `express-session`
 - `sticky-session` - шаринг сессий между воркерами (например, с помощью `cluster`)
-- `cookie-parser`
-- `cookie-signature` - подпись кук
 - `connect-redis` (сессии в редисе) / `express-mysql-session` (сессии в mysql)
 - `securelogin` - [описание](https://github.com/sakurity/securelogin)
 - `express-urlrewrite` - 301 редирект
@@ -158,6 +157,7 @@
 - `ratelimiter`, `async-ratelimiter` - rate limit запросов с хранилищем в редисе / `limiter` (но по-хорошему этим должен заниматься nginx)
 -
 - `portastic` - нахождение свободных локальных портов (удобно для dev-запуска) / `portscanner` - тоже самое, но, возможно, работает и для внешних айпишников / `get-port` - берёт заданный порт либо рандомный, если занят
+- `kill-port` - грохнуть процесс на открытом порту
 - `serve-static` - встроен в сам экспресс
 - `http-server` - http сервер статики одной командой из консоли
 - `http-proxy-middleware` - полезная гибкая штука для перенаправления запросов на другие сервера
@@ -300,6 +300,7 @@ app.set('x-powered-by', false);
 - `fs-extra`, `graceful-fs` / `upath` - улучшают встроенный `path`
 - `resolve` / `enhanced-resolve` (асинхронный) - нодовый алгоритм резолва путей
 - `node-dir` - доп.плюшки для работы с директориями
+- `readdirp` - как `readdir`, но рукурсивно и с поддержкой stream'ов
 - `path-exists`
 - `is-absolute`, `is-relative`
 - `normalize-path`
@@ -401,7 +402,7 @@ app.set('x-powered-by', false);
 - `ololog`
 - `debug`
 - `microlog`
-- `intel` / `bunyan` / `log4js` / `tracer` / `winston` / `eazy-logger` / `glogg` / `lggr` - многоуровневое (danger/error/fatal) логирование куда угодно - консоль, файлы, stdout (`log4js` медленный, `winston` - популярный, `tracer` - интересный) / `loglevel` (`loglevel-plugin-prefix`) / `whiner` / `pino` ([сайт](http://getpino.io/#/ - `pino` [должен быть самым быстрым](https://habrahabr.ru/company/ruvds/blog/334806/) / `consola` - от команды nuxt'а
+- `intel` / `bunyan` / `log4js` / `tracer` / `winston` / `eazy-logger` / `glogg` / `lggr` - многоуровневое (danger/error/fatal) логирование куда угодно - консоль, файлы, stdout (`log4js` медленный, `winston` - популярный, `tracer` - интересный) / `loglevel` (`loglevel-plugin-prefix`) / `whiner` / `pino` ([сайт](http://getpino.io/#/ - `pino` [должен быть самым быстрым](https://habrahabr.ru/company/ruvds/blog/334806/), `pino-http` / `consola` - от команды nuxt'а
 - `gelf-stream` / `gelf-pro` - https://habrahabr.ru/company/2gis/blog/329128/
 - `mozlog`
 - `streamroller` / `file-stream-rotator` - ротация файлов логов
@@ -562,20 +563,23 @@ app.set('x-powered-by', false);
 - `http-proxy` - свой прокси-сервер на ноде
 - `http-mitm-proxy` - свой прокси-сервер на ноде
 - `anyproxy` - свой прокси-сервер на ноде от alibaba'ы
-- `proxy-addr` - определяет адрес проксированного запроса (из объекта `req`)
 
 #### Юзер-агентики
 
 - `useragent` - парсер/матчер/компаратор юзерагентов
 - `random-useragent`
 - `ua-parser-js` - клиентский парсер user-agent'а
+- `isbot` - проверка на бота по user-agent'у
 
 #### Печеньки
 
 - `js-cookie`
 - `cookie`
 - `cookieparser`
+- `cookie-parser`
+- `cookie-signature` - подпись кук
 - `tough-cookie`, `tough-cookie-filestore`
+- `cookie-universal`, `cookie-universal-nuxt` - для ssr
 - `cookies.txt`
 - `react-cookie`
 - `cookies` - это для express'а/koa, и вряд ли нужен / `node-cookie` - тоже для создания/чтения/подписи кук из/в `req`/`res`
@@ -596,7 +600,8 @@ app.set('x-powered-by', false);
 - `is-ip`
 - `ip-regex` - регулярка для ip
 - `stun` - определение своего внешнего ip-адреса по stun-протоколу ([список доступных публичных серверов](https://gist.github.com/antixrist/b529e3b231cdf5c28c8d197543ad026f)) / `public-ip` - определение внешнего ip через dns-запрос / `internal-ip` - определение локального ip
-- `geoip-lite` / `maxmind` (+ поискать для [sypexgeo](https://sypexgeo.net/ru/stats/)). Свой сервис - [freegeoip](https://github.com/fiorix/freegeoip) / `geoip-local`
+- `geoip-lite` / `maxmind` (+ поискать для [sypexgeo](https://sypexgeo.net/ru/stats/)). Свой сервис - [freegeoip](https://github.com/fiorix/freegeoip) / `geoip-local` / `@maxmind/geoip2-node`
+- `proxy-addr` (под капотом юзает `ipaddr.js` и `forwarded`) / `request-ip` - определяет адрес проксированного запроса (по заголовкам из объекта `req`)
 - `fast-url-parser` и `querystringparser`
 - `url-parse-lax` - расширенный url.parse - без протоколов и с ip
 - `encodeurl`
@@ -609,9 +614,8 @@ app.set('x-powered-by', false);
 - `protocolify`
 - `urijs`
 - `url-pattern`
-- `proxy-addr` - определяет адрес проксированного запроса (из объекта `req`), под капотом юзает `ipaddr.js` и `forwarded`
 - `path-to-regexp` - превращает строки вида `/foo/:bar` в регекспы вида `/^\/foo\/([^\/]+?)\/?$/i` (полезно для написания роутера, используется во `vue-router`)
-- `is-google` - по ip проверяет сделан ли запрос от гуглобота, или кто-то просто подделал user-agent, чтобы им притвориться
+- `is-google` / `isbot` - по ip проверяет сделан ли запрос от гуглобота, или кто-то просто подделал user-agent, чтобы им притвориться
 - `slug` - делает замену пробелов и unicode-символов (даже emoji) для пригодности в урл
 
 Чекалки ip:
@@ -896,7 +900,7 @@ app.set('x-powered-by', false);
 - `file-saver`, `save-as`
 - `filepond` - upload'илка файлов
 - `smartcrop`
-- `copy-to-clipboard`
+- `copy-to-clipboard` / `clipboard` / `copy-text-to-clipboard`
 - `vkey`
 - `parsleyjs` - валидатор форм
 - `pretty-checkbox` - чекбоксы на scss'е
@@ -914,6 +918,7 @@ app.set('x-powered-by', false);
 - `ellipsed` - обрезка с многоточием многострочных текстов
 - `trunc-text`
 - `trunc-html`
+- `iframe-resizer`
 - `shear.js` / `truncate-html` - truncate текста, с учётом html-тегов
 - `wenk` / `balloon-css` / `hint.css`
 - `popper.js` (`vue-popperjs`) / `tooltip.js` - замена `tether`у
@@ -957,7 +962,8 @@ app.set('x-powered-by', false);
 - `focus` - нахождение центральной сущности на изображении для последующей фокусировки или кропа
 - `@nishanths/zoom.js` / `medium-zoom` - zoom изображений как на medium'е
 - `fg-enlarge` - zoom изображения вслед за курсором внутри контейнера, как на али
-- `flexslider`, `vue-awesome-swiper` / `swipejs` / `owl.carousel` / `responsive-carousel` / `flickity` / `swiper` / `siema` - каруселька
+- `flexslider`, `vue-awesome-swiper` / `swipejs` / `owl.carousel` / `responsive-carousel` / `flickity` / `swiper` / `siema` - каруселька (можно ещё [вот здесь](https://www.npmtrends.com/flickity-vs-siema-vs-slick-vs-swiper-vs-skrollr-vs-slick-carousel-vs-owl.carousel-vs-lory.js-vs-packery) посмотреть)
+- `nouislider` / `vue-slider-component`
 - `flatpickr` - календарь
 - `pickr-widget` - color picker без привязки к фреймворку
 - `handorgel` - аккордеон без зависимостей
@@ -988,13 +994,23 @@ app.set('x-powered-by', false);
 
 ### Vue.js
 
+- `vuelidate`, `vue-vuelidate-jsonschema` - валидация
 - `vuex-shared-mutations` - запускает мутации на всех открытых табах
 - `vuex-loading`
 - `vuex-cache`
 - `vuex-persistedstate` / `vuex-persist` (этот лучше)
 - `vue-functional-data-merge`
+- `vue-class-component` , `vue-property-decorator`
 - [Как правильно публиковать](https://pablohpsilva.github.io/vuejs-component-style-guide/#/russian) [vue-компоненты](https://vuejsdevelopers.com/2017/07/31/vue-component-publish-npm/)
 - `vuera` - React во Vue, Vue в React'е
+
+### Nuxt.js
+
+- `nuxt-start` - зачем нужен? пока не понятно. От самой команды nuxt'а
+- `nuxt-polyfill`
+- `@nuxtjs/router` - роутер не на директориях
+- `@nuxtjs/sitemap`
+- `cookie-universal-nuxt`
 
 [Описание настройки SSR](https://habrahabr.ru/post/334952/)
 
@@ -1014,10 +1030,10 @@ app.set('x-powered-by', false);
 - `dexie` - враппер над IndexedDB
 - `fg-loadcss` - полифил для `rel=preload` от FG
 - `custom-event`
-- `sticky-state` / `fixed-sticky` - второй от filament'а и используется на mail.ru'ответах (не поддерживается) / `stickybits` - рабочий поддерживаемый
+- `sticky-state` / `fixed-sticky` - второй от filament'а и используется на mail.ru'ответах (не поддерживается) / `stickybits` - рабочий поддерживаемый / `stickyfilljs`
 - `object-fit-images`
 - `url-search-params`
-- `resize-observer-polyfill`
+- `resize-observer-polyfill`, `resize-detector`
 - `matchmedia-polyfill`
 - `bounding-client-rect`
 - `mutation-observer`
