@@ -16,6 +16,7 @@ module.exports = {
     max: 10,
   },
   useNullAsDefault: true,
+  doNotRejectOnRollback: false,
   migrations: {
     schemaName: null,
     tableName: 'knex_migrations',
