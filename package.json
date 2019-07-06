@@ -18,11 +18,11 @@
     "lint:staged": "lint-staged",
     "clean": "rm -rf dist && mkdir dist",
     "babel": "babel src --out-dir dist --copy-files --source-maps",
-    "babel:watch": "run-s \"babel --watch\"",
+    "babel:watch": "run-s \"babel -- --watch\"",
     "watch": "run-s clean babel:watch",
     "build": "run-s clean babel",
-    "dev": "node --stack-trace-limit=1024 -r ./dist/_bootstrap",
-    "start": "cross-env NODE_ENV=production node --stack-trace-limit=1024 -r ./dist/_bootstrap",
+    "dev": "node --stack-trace-limit=1024 -r ./_bootstrap",
+    "start": "cross-env NODE_ENV=production node --stack-trace-limit=1024 -r ./_bootstrap",
     "migrate:make": "cross-env KNEX_CREATOR=1 knex migrate:make",
     "migrate:up": "knex migrate:up",
     "migrate:down": "knex migrate:down",
@@ -32,6 +32,7 @@
     "migrate:latestVersion": "knex migrate:latestVersion",
     "seed:make": "cross-env KNEX_CREATOR=1 knex seed:make",
     "seed:run": "knex seed:run",
+    "db:make": "run-s migrate:rollback migrate:latest seed:run",
     "test": "echo \"No test specified\" && exit 0"
   },
   "lint-staged": {

@@ -1,11 +1,10 @@
-/* eslint-disable global-require */
-
-import 'dotenv-safe/config';
-import onExit from 'signal-exit';
+require('dotenv-safe/config');
+const onExit = require('signal-exit');
 
 /**
  * При непойманном исключении нода падает (показывая ошибку в консоли),
- * но вот при `unhandledRejection` (провалившийся промис без `.catch()`)
+ * но вот при `unhandledRejection` (провалившийся промис без `.catch()`
+ * или `.catch()` повесили после того, как возникла ошибка)
  * нода просто покажет возникшую ошибку и продолжит работать как ни в чём ни бывало.
  * Хотя это абсолютно такая же непойманная ошибка, только в асинхронном коде.
  * `make-promises-safe` заставляет ноду падать в таких случаях.
@@ -13,14 +12,14 @@ import onExit from 'signal-exit';
  * Можно вызвать как `require('make-promises-safe').abort = true`,
  * тогда при падении будет сделан ещё и core dump.
  */
-import 'make-promises-safe';
+require('make-promises-safe');
 
 /**
  * Нода/v8 не умеет в соурсмапы, поэтому в стектрейсах
  * номера строк/столбцов берутся из транспайлерного кода.
  * `source-map-support` исправляет этот недочёт.
  */
-import 'source-map-support/register';
+require('source-map-support/register');
 
 /**
  * Любое изменение стектрейса - это долго и дорого.
@@ -32,7 +31,8 @@ if (process.env.NODE_ENV !== 'production') {
    * В стектрейс ноды попадают не все вызовы клиентского кода.
    * Благодаря `trace` в стректрейсе появляется максимально возможное
    * количество вызовов функций (в т.ч. `@babel/runtime` и `regenerator-runtime`).
-   * В принципе, не обязателен (может быть слишком много шума из-за `@babel/runtime`, `regenerator-runtime` и т.п.).
+   * В принципе, не обязателен (может быть слишком много шума
+   * из-за `@babel/runtime`, `regenerator-runtime` и т.п.).
    */
   require('trace');
 
@@ -49,12 +49,14 @@ if (process.env.NODE_ENV !== 'production') {
  *  - явно вызывается `process.exit(code)` или `process.kill(pid, sig)`;
  *  - извне получен сигнал фатального завершения процесса (`Ctrl+C` в консоли).
  * Если завершение произошло из-за непойманной ошибки или `process.exit()`,
- * то `code` будет равен `1` или тому, что передали в `process.exit(code)`/`process.exitCode`, а `signal === null`.
- * Если завершение произошло из-за явной остановки (например, `Ctrl+C` в консоли или `process.kill(pid, sig)`),
- * то `code === null`, а `signal` - соответствующему сигналу, переданному в процесс (например, `SIGINT` или `SIGTERM`).
+ * то `code` будет равен `1` или тому, что передали в `process.exit(code)`/`process.exitCode`,
+ * а `signal === null`. Если завершение произошло из-за явной остановки
+ * (например, `Ctrl+C` в консоли или `process.kill(pid, sig)`), то `code === null`,
+ * а `signal` - сигналу, переданному в процесс (например, `SIGINT` или `SIGTERM`).
  *
  * Поэтому можно заэмитить кастомное событие, на которое можно подписаться
  * где угодно в приложении и сделать необходимые операции перед остановкой.
- * Но в коллбэках выполнится только синхронный код - все последующие tick'и event loop'а будут прерваны.
+ * Но в коллбэках выполнится только синхронный код -
+ * все последующие tick'и event loop'а будут прерваны.
  */
 onExit((code, signal) => process.emit('shutdown', { code, signal }));
