@@ -3,7 +3,7 @@
 //  - for `max-len` rule in `eslint` config
 
 module.exports = {
-  printWidth: 120,
+  printWidth: 100,
   singleQuote: true,
   trailingComma: 'all',
 };

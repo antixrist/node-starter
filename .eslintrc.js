@@ -41,15 +41,12 @@ module.exports = {
   ],
   overrides: [
     {
-      files: [
-        // rewrite rules for any config files in project root (including dot-files)
-        '*.{js,mjs}',
-        '.*.{js,mjs}',
-      ],
+      // rewrite rules for any config files in project root (including dot-files)
+      files: ['*.{js,mjs}', '.*.{js,mjs}'],
       excludedFiles: ['src/**'],
       rules: {
-        'import/unambiguous': 0,
         'import/no-commonjs': 0,
+        'global-require': 0,
         'node/exports-style': [2, 'module.exports'],
       },
     },
@@ -64,11 +61,19 @@ module.exports = {
       files: ['src/**/seeds/**/*.js'],
       rules: {
         // 'import/no-unused-modules': 0,
+        'unicorn/filename-case': 0,
         'import/prefer-default-export': 0,
+        'babel/camelcase': [
+          2,
+          {
+            properties: 'never',
+            ignoreDestructuring: false,
+          },
+        ],
       },
     },
     {
-      files: ['src/**/models/**/*.js'],
+      files: ['src/**/models/**/*.js', 'src/**/*Model.js'],
       rules: {
         'global-require': 1,
         'import/no-dynamic-require': 1,
@@ -115,7 +120,7 @@ module.exports = {
         // if change line length don't forget set same value:
         //  - for `max_line_length` in `.editorconfig`
         //  - for `printWidth` option in `prettier` config
-        code: 120,
+        code: 100,
         tabWidth: 2,
         ignoreUrls: true,
         ignoreComments: false,
@@ -137,11 +142,13 @@ module.exports = {
       },
       {
         selector: 'LabeledStatement',
-        message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+        message:
+          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
       },
       {
         selector: 'WithStatement',
-        message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        message:
+          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
       },
     ],
 
@@ -258,7 +265,7 @@ module.exports = {
         allowAnonymousFunction: false,
         allowCallExpression: false,
         allowLiteral: false,
-        allowObject: false,
+        allowObject: true,
       },
     ],
     'import/no-commonjs': [2, { allowRequire: true }],
@@ -288,12 +295,13 @@ module.exports = {
     'import/no-self-import': 2,
     'import/no-unassigned-import': 0,
     'import/no-unresolved': [2, { commonjs: true }],
-    // `import/no-unused-modules` is broken for proposals `export-default-from` and `export-namespace-from`
+    // `import/no-unused-modules` is broken for proposals
+    // `export-default-from` and `export-namespace-from`
     'import/no-unused-modules': 0, // [1, { missingExports: false, unusedExports: true }],
     'import/no-useless-path-segments': [2, { noUselessIndex: true }],
     'import/no-webpack-loader-syntax': 2,
     'import/prefer-default-export': 2,
-    'import/unambiguous': 1,
+    'import/unambiguous': 0,
     'import/order': [
       1, // fixable
       {

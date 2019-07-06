@@ -1,3 +1,5 @@
+node_modules
+
 # exluding all *.js files everywhere
 **/*.js
 **/*.mjs
