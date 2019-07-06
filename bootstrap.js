@@ -1,5 +1,5 @@
 require('dotenv-safe/config');
-const onExit = require('signal-exit');
+// const onExit = require('signal-exit');
 
 /**
  * При непойманном исключении нода падает (показывая ошибку в консоли),
@@ -59,4 +59,4 @@ if (process.env.NODE_ENV !== 'production') {
  * Но в коллбэках выполнится только синхронный код -
  * все последующие tick'и event loop'а будут прерваны.
  */
-onExit((code, signal) => process.emit('shutdown', { code, signal }));
+// onExit((code, signal) => process.emit('shutdown', { code, signal }));
