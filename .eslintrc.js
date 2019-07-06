@@ -42,7 +42,7 @@ module.exports = {
   overrides: [
     {
       // rewrite rules for any config files in project root (including dot-files)
-      files: ['*.{js,mjs}', '.*.{js,mjs}'],
+      files: ['*.{js,mjs}'],
       excludedFiles: ['src/**'],
       rules: {
         'import/no-commonjs': 0,
@@ -366,7 +366,7 @@ module.exports = {
       },
     ],
     'unicorn/import-index': 1, // fixable
-    'unicorn/new-for-builtins': 1, // fixable, prefer to 'no-new-wrappers'
+    'unicorn/new-for-builtins': 1, // fixable
     'unicorn/no-abusive-eslint-disable': 0, // prefer to 'eslint-comments/no-unlimited-disable'
     'unicorn/no-array-instanceof': 1, // fixable
     'unicorn/no-console-spaces': 1, // fixable
