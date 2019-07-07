@@ -1011,6 +1011,7 @@ app.set('x-powered-by', false);
 - `@nuxtjs/router` - роутер не на директориях
 - `@nuxtjs/sitemap`
 - `@nuxtjs/redirect-module`
+- `serve-placeholder` - вместо стандартных 404 отдаёт синтаксически-нормализованные заглушки под каждый mime-тип
 - `cookie-universal-nuxt`
 
 [Описание настройки SSR](https://habrahabr.ru/post/334952/)
