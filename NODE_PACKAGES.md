@@ -1010,6 +1010,7 @@ app.set('x-powered-by', false);
 - `nuxt-polyfill`
 - `@nuxtjs/router` - роутер не на директориях
 - `@nuxtjs/sitemap`
+- `@nuxtjs/redirect-module`
 - `cookie-universal-nuxt`
 
 [Описание настройки SSR](https://habrahabr.ru/post/334952/)
