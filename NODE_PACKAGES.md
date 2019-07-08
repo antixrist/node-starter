@@ -616,7 +616,7 @@ app.set('x-powered-by', false);
 - `url-pattern`
 - `path-to-regexp` - превращает строки вида `/foo/:bar` в регекспы вида `/^\/foo\/([^\/]+?)\/?$/i` (полезно для написания роутера, используется во `vue-router`)
 - `is-google` / `isbot` - по ip проверяет сделан ли запрос от гуглобота, или кто-то просто подделал user-agent, чтобы им притвориться
-- `slug` - делает замену пробелов и unicode-символов (даже emoji) для пригодности в урл
+- `@sindresorhus/slugify` / `slug` - делает замену пробелов и unicode-символов (даже emoji) для пригодности в урл
 
 Чекалки ip:
 
@@ -936,7 +936,7 @@ app.set('x-powered-by', false);
 - `evercookie` - [repo](https://github.com/samyk/evercookie)
 - `fingerprintjs2`
 - `history`
-- `instantclick` / `turbolinks` - простой способ сделать классический сайт близким по скорости к spa / `quicklink` - prefetch'ит ссылки во вьюпорте
+- `instant.page` / `instantclick` / `turbolinks` - простой способ сделать классический сайт близким по скорости к spa / `quicklink` - prefetch'ит ссылки во вьюпорте
 - [JavaScript-autoComplete](https://github.com/Pixabay/JavaScript-autoComplete)
 - `mediaplayer` / `video.js` / `mediaelement` - лёгкий, расширяемый, интернациональный, доступный, кроссбраузерный, легконастраиваемый медиаплеер на ванильном js
 - `animejs` - норм такие анимашки
