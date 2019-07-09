@@ -288,7 +288,7 @@ module.exports = {
     'import/no-named-as-default-member': 1,
     'import/no-named-as-default': 1,
     'import/no-named-default': 2,
-    'import/no-namespace': 1,
+    'import/no-namespace': 0,
     'import/no-nodejs-modules': 0,
     'import/no-relative-parent-imports': 0,
     'import/no-restricted-paths': 0,
