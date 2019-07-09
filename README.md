@@ -257,7 +257,7 @@ module.exports = {
       {
         root: ['./src'],
         alias: {
-          '@': './src',
+          '~cwd': './',
           '~': './src',
         },
       },
@@ -288,7 +288,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.mjs', '.node'],
     alias: {
-      '@': path.resolve('./src'),
+      '~cwd': path.resolve('./'),
       '~': path.resolve('./src'),
     },
   },

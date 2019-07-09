@@ -9,8 +9,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.mjs', '.node'],
     alias: {
-      '@root': path.resolve('./'),
-      '@': path.resolve('./src'),
+      '~cwd': path.resolve('./'),
       '~': path.resolve('./src'),
     },
   },
