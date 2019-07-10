@@ -51,14 +51,14 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/migrations/**/*.js'],
+      files: ['src/**/?(.)migrations/**/*.js'],
       rules: {
         // 'import/no-unused-modules': 0,
         'unicorn/filename-case': 0,
       },
     },
     {
-      files: ['src/**/seeds/**/*.js'],
+      files: ['src/**/?(.)seeds/**/*.js'],
       rules: {
         // 'import/no-unused-modules': 0,
         'unicorn/filename-case': 0,
@@ -73,7 +73,7 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/models/**/*.js', 'src/**/*Model.js'],
+      files: ['src/**/*Model.js', 'src/**/*.model.js'],
       rules: {
         'global-require': 1,
         'import/no-dynamic-require': 1,

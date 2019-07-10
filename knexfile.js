@@ -20,11 +20,11 @@ module.exports = {
   migrations: {
     schemaName: null,
     tableName: 'knex_migrations',
-    directory: resolver('migrations'),
-    stub: resolver('migrations/migration.stub'),
+    directory: resolver('db/.migrations'),
+    stub: resolver('db/.migrations/migration.stub'),
   },
   seeds: {
-    directory: resolver('seeds'),
-    stub: resolver('seeds/seed.stub'),
+    directory: resolver('db/.seeds'),
+    stub: resolver('db/.seeds/seed.stub'),
   },
 };
