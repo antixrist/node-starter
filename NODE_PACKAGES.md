@@ -301,7 +301,7 @@ app.set('x-powered-by', false);
 - `fs-extra`, `graceful-fs` / `upath` - улучшают встроенный `path`
 - `resolve` / `enhanced-resolve` (асинхронный) - нодовый алгоритм резолва путей
 - `node-dir` - доп.плюшки для работы с директориями
-- `readdirp` - как `readdir`, но рукурсивно и с поддержкой stream'ов
+- `readdirp` / `recursive-readdir` - как `readdir`, но рукурсивно и с поддержкой stream'ов
 - `path-exists`
 - `is-absolute`, `is-relative`
 - `normalize-path`
@@ -413,6 +413,7 @@ app.set('x-powered-by', false);
 
 - `lodash` / `iterare` / `fast.js` / [just](https://github.com/angus-c/just) / `jsprim`
 - `object-path` / `dottie` - продвинутый `_.get()`, `dot-object`, `undefsafe` / `to-object-path` / `dlv` - работа с json-объектами в виде dot-нотации, `generate-object-property`
+- `set-value` - аналог `_.set()`
 - `only` - замена `_.pick()` от TJ
 - `tableize` - схлопывает (сворачивает) json-структуру в объект вида `{'level1key': 'level1value', 'level1key.level2key': 'level2value'}` / `unbend` - то же самое, но через слэш (для построения урлов)
 - `@sindresorhus/is`, `isemail`, `is-svg`, `isstream`, `is-glob`, `is-dotfile`, `is-absolute`, `is-relative` / `is-buffer` (в т.ч. для браузера) - проверка типов
@@ -447,7 +448,7 @@ app.set('x-powered-by', false);
 - `diff` - реализация алгоритма diff'а текста (шоб можно было сделать прям как на гитхабе) / `fast-diff`
 - `deep-equal` / `fast-deep-equal`
 - `fastest-clone` / `rfdc` - быстрое клонирование / `fclone` - быстрое клонирование с учётом циклических ссылок / `deepcopy` - гибко настраивается функцией `reviewer`-ом
-- `deepmerge`
+- `deepmerge` / `mixin-deep`
 - `deep-freeze`
 - `BitArray.js` ([git](https://github.com/brockwhittaker/BitArray.js)) Очень оптимизированный массив для хранения битовых флагов
 - `pako` - zlib для js
