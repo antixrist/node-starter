@@ -14,6 +14,7 @@ module.exports = {
   pool: {
     min: 2,
     max: 10,
+    afterCreate: (conn, done) => conn.query('SET LC_MESSAGES TO "C";', done),
   },
   useNullAsDefault: true,
   doNotRejectOnRollback: false,
