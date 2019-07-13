@@ -306,7 +306,7 @@ module.exports = {
       1, // fixable
       {
         'newlines-between': 'never',
-        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'sibling', 'index'],
       },
     ],
 
