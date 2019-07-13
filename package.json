@@ -83,6 +83,8 @@
     "objection-db-errors": "^1.1.1",
     "pg": "^7.11.0",
     "pg-query-stream": "^2.0.0",
+    "pino": "^5.12.6",
+    "pino-pretty": "^3.2.0",
     "signal-exit": "^3.0.2",
     "source-map-support": "^0.5.12",
     "trace": "^3.1.1"
