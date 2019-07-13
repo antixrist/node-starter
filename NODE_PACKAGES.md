@@ -493,6 +493,7 @@ app.set('x-powered-by', false);
 - `node-vk-bot-api` - бот для вк
 - `instagram-private-api` - неофициальное api для инстаграмма с полной эмуляцией андройд-клиента ([на питоне](https://github.com/mgp25/Instagram-API/) популярнее и обновляется чаще)
 - `socks5-https-client`
+- `autocannon` - консольный аналог `ab` и `wrk`. Вызывать так: `npx autocannon -c 10 -a 100 http://localhost:3000`
 
 ### Парсинг dom'а, json'а, csv, markdown
 
