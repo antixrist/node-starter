@@ -268,7 +268,7 @@ module.exports = {
         allowObject: true,
       },
     ],
-    'import/no-commonjs': [2, { allowRequire: true }],
+    'import/no-commonjs': [2, { allowRequire: false }],
     'import/no-cycle': 1,
     'import/no-default-export': 0,
     'import/no-named-export': 0,
