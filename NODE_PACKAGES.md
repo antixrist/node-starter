@@ -492,7 +492,6 @@ app.set('x-powered-by', false);
 - `node-vk-bot-api` - бот для вк
 - `instagram-private-api` - неофициальное api для инстаграмма с полной эмуляцией андройд-клиента ([на питоне](https://github.com/mgp25/Instagram-API/) популярнее и обновляется чаще)
 - `socks5-https-client`
-- `apiai` - распознавание голоса с помощью гугловского [api.ai](https://api.ai/)
 
 ### Парсинг dom'а, json'а, csv, markdown
 
@@ -700,7 +699,6 @@ app.set('x-powered-by', false);
 - `internal` - созданице цепочки тасков, как у Nightmare
 - `archiver` - архиватор
 - `ffi` - работа с системными библиотеками без написания c++ обёрток
-- `apiai` - распознавание голоса с помощью гугловского [api.ai](https://api.ai/)
 
 ### Очередя и таски
 
@@ -797,11 +795,12 @@ app.set('x-powered-by', false);
 - `word2vec` / `word2vec-native` / `word2vec.js`
 - `wuzzy` - похожесть строк разными алгоритмами
 - `convert-layout` - смена раскладки переданной строки
-- `@google-cloud/speech` - разпознавание теста из аудио с помощью google cloud api (есть русский язык)
 - `franc` / `guesslanguage` - определение языка
 - `node-summary` - выдёргивает основную мысль из текста
 - `yaspeller` - спеллчекер через яндексовое api
 - `@google-cloud/language` - определение языка, тональности текста, сущностей, предложений, токенов, etc. Это обёртка для Google Cloud Api.
+- `@google-cloud/speech` - разпознавание теста из аудио с помощью google cloud api (есть русский язык)
+- `apiai` - распознавание голоса с помощью гугловского [api.ai](https://api.ai/)
 - [Классификация текста от facebook'а](https://github.com/facebookresearch/fastText)
 - [Поисковый движок (или типа того) от facebook'а](https://github.com/facebookresearch/faiss)
 
