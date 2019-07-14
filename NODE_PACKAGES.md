@@ -301,7 +301,8 @@ app.set('x-powered-by', false);
 - `fs-extra`, `graceful-fs` / `upath` - улучшают встроенный `path`
 - `resolve` / `enhanced-resolve` (асинхронный) - нодовый алгоритм резолва путей
 - `node-dir` - доп.плюшки для работы с директориями
-- `readdirp` / `recursive-readdir` - как `readdir`, но рукурсивно и с поддержкой stream'ов
+- `readdirp` / `recursive-readdir` - как `readdir`, но рекурсивно и с поддержкой stream'ов
+- `sonic-boom` - быстрая замена `fs.createWriteStream()` для записи потоков в файл, работает только с utf-8 строками
 - `path-exists`
 - `is-absolute`, `is-relative`
 - `normalize-path`
