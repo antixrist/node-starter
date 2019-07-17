@@ -970,7 +970,7 @@ app.set('x-powered-by', false);
 - `fg-enlarge` - zoom изображения вслед за курсором внутри контейнера, как на али
 - `flexslider`, `vue-awesome-swiper` / `swipejs` / `owl.carousel` / `responsive-carousel` / `flickity` / `swiper` / `siema` - каруселька (можно ещё [вот здесь](https://www.npmtrends.com/flickity-vs-siema-vs-slick-vs-swiper-vs-skrollr-vs-slick-carousel-vs-owl.carousel-vs-lory.js-vs-packery) посмотреть)
 - `nouislider` / `vue-slider-component`
-- `flatpickr` - календарь
+- `flatpickr` / `vue2-datepicker` - календарь
 - `pickr-widget` - color picker без привязки к фреймворку
 - `handorgel` - аккордеон без зависимостей
 - `@filamentgroup/tau` - 360° галерея
