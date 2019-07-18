@@ -88,9 +88,6 @@
 - `better-npm-run`
 - `wait-on` - консольная, пригодная для использования в npm-скриптах, ожидалка чего угодно
 - `cross-env` - для кроссплатформенной установки переменных окружения из `npm run`
-- `shelljs` - cli/bash-функции прямо в ноде
-- `cash` - кроссплатформенные shell-команды, в cli и в самой ноде
-- `shx` - кроссплатформенные bash-функции в скриптах `package.json` (обёртка над `shelljs`)
 - `npm-which` - аналог консольного `which` для наждения бинарников установленных npm-пакетов
 - `precommit-hook` - запуск npm-скриптов на коммиты
 - `husky` - не даёт коммитить/пушить, если выполнение чего-то подобного: `{ "scripts": { "precommit": "npm test", "prepush": "npm test" } }` прошло с ошибками
@@ -99,14 +96,9 @@
 - `validate-commit-msg` - валидатор сообщений к коммитам
 - `standard-version` - автоматический changelog при обновлении версии на основе сообщений к коммитам
 - `npm-check` - тулза для обновления зависимостей с консольным ui
-- `is-ci` - проверяет, запущен ли код в ci-окружении
-- `is-ci-cli` - позволяет для разных ci-окружений запускать разные npm-скрипты
-- `is-wsl` - запущен ли процесс из под Windows Subsystem for Linux
 - `in-publish` - обнаружение в npm-scripts факта запуска публикации пакета (во время локальной разработки), чтобы делать что-то, что не нужно делать во время dev-установки
 - `spritesmith` / `sprity` (`sprity-gm`) / `directory-encoder` - генераторы спрайтов и css к ним
-- `svg-mixer` - генератор svg-спрайтов
 - `svg-sprite-loader`
-- `sqip` - делает из png svg'шку с градиентом основных цветов изображения
 
 ### Отладка
 
@@ -339,6 +331,7 @@ app.set('x-powered-by', false);
 
 ### Стримы
 
+- `is-stream`
 - `event-stream`
 - `split2`
 - `through2`
@@ -418,7 +411,9 @@ app.set('x-powered-by', false);
 - `set-value` - аналог `_.set()`
 - `only` - замена `_.pick()` от TJ
 - `tableize` - схлопывает (сворачивает) json-структуру в объект вида `{'level1key': 'level1value', 'level1key.level2key': 'level2value'}` / `unbend` - то же самое, но через слэш (для построения урлов)
-- `@sindresorhus/is`, `isemail`, `is-svg`, `isstream`, `is-glob`, `is-dotfile`, `is-absolute`, `is-relative` / `is-buffer` (в т.ч. для браузера) - проверка типов
+- `@sindresorhus/is`, `isemail`, `is-svg`, `isstream`, `is-glob`, `is-dotfile`, `is-absolute`, `is-relative`, `is-stream`, `is-buffer` (в т.ч. для браузера) - проверка типов
+- `fn-name` - извлекает имя функции
+- `mimic-fn` - функция прикидывается другой функцией (вплоть до имени и свойств), полезно для обёрток по типу `once`, `mem`, etc
 - `kind-of` - замена typeof
 - `jsonschema` / `ajv` , `ajv-keywords` / `z-schema` - создание и валидация JSONScheme'ы, `cast-with-schema`, `json-schema-deref-sync` / `turbo-json-parse` (не поддерживает весь стандарт))
 - `type-check` - можно строить целые схемы для проверки типов, `levn` - кастует типы на основе `type-check`-схемы / `fast-json-stringify` - сериализует объект на основе схемы, кастуя значения
@@ -703,6 +698,13 @@ app.set('x-powered-by', false);
 - `internal` - созданице цепочки тасков, как у Nightmare
 - `archiver` - архиватор
 - `ffi` - работа с системными библиотеками без написания c++ обёрток
+- `shelljs` - cli/bash-функции прямо в ноде
+- `cash` - кроссплатформенные shell-команды, в cli и в самой ноде
+- `shx` - кроссплатформенные bash-функции в скриптах `package.json` (обёртка над `shelljs`)
+- `is-ci` - проверяет, запущен ли процесс в ci-окружении
+- `is-ci-cli` - позволяет для разных ci-окружений запускать разные npm-скрипты
+- `is-wsl` - запущен ли процесс из под Windows Subsystem for Linux
+- `std-env` - получает инфу об окружении - linux/windows/ci/browser/etc
 
 ### Очередя и таски
 
@@ -848,6 +850,9 @@ app.set('x-powered-by', false);
 - `is-svg`
 - `d3`
 - `svg-intersections` - алгоритмы нахождения пересечений разных фигур
+- `svg-sprite-loader`
+- `svg-mixer` - генератор svg-спрайтов, от JetBrains
+- `sqip` - делает из png svg'шку с градиентом основных цветов изображения
 - [kevlindev](http://www.kevlindev.com/) - много разнообразной математики на js - [пересечения](http://www.kevlindev.com/geometry/2D/intersections/index.htm) [фигур](http://www.kevlindev.com/gui/math/intersection/index.htm), [геометрия фигур](http://www.kevlindev.com/gui/shapes/shape/index.htm) и [прочее](http://www.kevlindev.com/gui/)
 
 ### Графики
@@ -897,7 +902,7 @@ app.set('x-powered-by', false);
 - [fontplop](https://github.com/matthewgonzalez/fontplop) - конвертёр web-шрифтов, но под мак
 - `glyphhanger` - консольная тузла, которая пауком проходится по страничкам, смотрит какие глифы используются и сохраняет с ними файлы шрифтов (т.е. нужна для оптимизации используемых веб-шрифтов), от filament'а.
 - `nerd-fonts` - компиляция всех популярных opensource-шрифтов в один
-- `feather-icons` / `vue-feather-icon` / `material-design-icons` - svg-иконки
+- `feather-icons` / `vue-feather-icon` / `@mdi/svg` / `@jetbrains/icons` - svg-иконки
 - `mousetrap` - работа с комбинациями hotkey'ев
 - `tablesaw` - responsive-таблицы от filament'а (с кучей функционала)
 - `fg-select-css` - стили для кроссбраузерной кастомизации select'а от filament'а
@@ -963,6 +968,7 @@ app.set('x-powered-by', false);
 - `waypoints` / `isInViewport` / `porthole` / `jquery-viewport` / `sticky-kit` / `scrollmonitor`- попадание элемента во вьюпорт, наблюдение за скроллом, липкий сайдбар, [hc-sticky](https://github.com/somewebmedia/hc-sticky) и [его](https://github.com/ferryvg/hc-sticky) [форки](https://github.com/CHEWX/hc-sticky) / `scrollama` - на IntersectionObserver'ах
 - `lozad` / [ещё один lazyload на IntersectionObserver](https://github.com/deanhume/lazy-observer-load). [демка](https://deanhume.github.io/lazy-observer-load/) / `lazysizes` - на IntersectionObserver, его советует Addy Osmani
 - `eqio` - Element css media-queries
+- `json2mq` - простые объекты превращает в валидные media queries
 - `image-promise` - промайзнутый `new Image` с кучей правильных проверок
 - `lightbox2` / `photoswipe` (используется на vc.ru) - модалочка для картинок
 - `focus` - нахождение центральной сущности на изображении для последующей фокусировки или кропа
@@ -994,6 +1000,7 @@ app.set('x-powered-by', false);
 - [получение ip через WebRTC](https://gist.github.com/antixrist/52e125476ee54f574046db963d522ab5)
 - [залогинен ли юзер в соц.сетях](https://gist.github.com/antixrist/dbc4630fd4dab2d3bf3b0aa92a534363)
 - [image-compressor](https://github.com/xkeshi/image-compressor) - браузерная сжималка (использовать перед upload'ом на сервер)
+- [Online генерация favicon'ок под все платформы](https://realfavicongenerator.net/)
 
 [Много ui-виджетов](https://github.com/dexteryy/spellbook-of-modern-webdev#ux-libraries)
 [Норм scss-тема для bootstrap'а](https://github.com/tabler/tabler/tree/dev/src/assets/scss)
@@ -1001,12 +1008,15 @@ app.set('x-powered-by', false);
 ### Vue.js
 
 - `vuelidate`, `vue-vuelidate-jsonschema` - валидация
+- `vue-media` - скрытие/показ элементов на заданных mq. Использует `matchMedia`
 - `vuex-shared-mutations` - запускает мутации на всех открытых табах
 - `vuex-loading`
 - `vuex-cache`
 - `vuex-persistedstate` / `vuex-persist` (этот лучше)
 - `vue-functional-data-merge`
 - `vue-class-component` , `vue-property-decorator`
+- `v-runtime-template`
+- `epic-spinners` - набор спиннеров-лоадеров, чисто под vue
 - [Как правильно публиковать](https://pablohpsilva.github.io/vuejs-component-style-guide/#/russian) [vue-компоненты](https://vuejsdevelopers.com/2017/07/31/vue-component-publish-npm/)
 - `vuera` - React во Vue, Vue в React'е
 
