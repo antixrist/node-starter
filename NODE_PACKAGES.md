@@ -1078,7 +1078,7 @@ app.set('x-powered-by', false);
 [Полифиллы, которые использовал github](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/#polyfills)
 [Список всех возможных WebApi](https://developer.mozilla.org/en-US/docs/Web/API)
 
-### nginx
+## nginx
 
 - [конфиг с настроенным кешем от h5bp](https://github.com/h5bp/server-configs-nginx)
 - [конфиг для http2/https, ipv6, load balancing'ом, нормальные заголовки для GeoIP](https://github.com/certsimple/nginx-http2-load-balancing-config)
@@ -1086,6 +1086,16 @@ app.set('x-powered-by', false);
 ## Docker
 
 - [`portainer`](https://github.com/portainer/portainer) - лёгкое ui для docker'а
+
+## Standalone-сервера для кропа/ресайза изображений
+
+- https://github.com/imgproxy/imgproxy (от Злых Марсиан, самый быстрый)
+- https://github.com/thumbor/thumbor
+- https://github.com/h2non/imaginary
+- https://github.com/agschwender/pilbox
+- https://github.com/thoas/picfit
+- https://github.com/willnorris/imageproxy
+- [Бенчмарки и сравнения](https://gist.github.com/DarthSim/9d971d2859f3714a29cf8ce094b3fc55)
 
 ## Etc
 
