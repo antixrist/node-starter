@@ -943,7 +943,7 @@ app.set('x-powered-by', false);
 - `common-tags` - годный html-шаблонизатор. как jsx, только правильный
 - `zingtouch` / `hammerjs` / `slipjs` - touch-гестуры и события
 - `blankshield` - безопасный `target="_blank"`
-- `bowser` / `platform` / `mobile-detect`- определитель девайса по юзерагенту
+- `bowser` / `platform` / `mobile-detect` / `detect-browser` - определитель девайса по юзерагенту
 - `evercookie` - [repo](https://github.com/samyk/evercookie)
 - `fingerprintjs2`
 - `history`
