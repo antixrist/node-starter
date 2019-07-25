@@ -47,7 +47,10 @@
 - `learnyounode` - интерактивная cli-обучалка
 - `cote` - набор библиотек для построения микросервисного кластера ([статья](https://habrahabr.ru/company/ruvds/blog/329784/))
 - `hotel` - управление и старт локальных dev-доменов для локальных проектов на всевозможных технологиях
-- `cross-spawn` / `execa` / `respawn`/ `shell-exec`
+- `cross-spawn` / `execa` / `respawn`/ `shell-exec` / `runscript`
+- `shelljs` - cli/bash-функции прямо в ноде
+- `cash` - кроссплатформенные shell-команды, в cli и в самой ноде
+- `shx` - кроссплатформенные bash-функции в скриптах `package.json` (обёртка над `shelljs`)
 - `puka` - экранирование shell-команд для `child_process.span/.exec`
 - `mz` - промайзнутые системные библиотеки
 - `caller` - выдаёт путь модуля, который про'require'ил текущий
@@ -411,7 +414,7 @@ app.set('x-powered-by', false);
 - `set-value` - аналог `_.set()`
 - `only` - замена `_.pick()` от TJ
 - `tableize` - схлопывает (сворачивает) json-структуру в объект вида `{'level1key': 'level1value', 'level1key.level2key': 'level2value'}` / `unbend` - то же самое, но через слэш (для построения урлов)
-- `@sindresorhus/is`, `isemail`, `is-svg`, `isstream`, `is-glob`, `is-dotfile`, `is-absolute`, `is-relative`, `is-stream`, `is-buffer` (в т.ч. для браузера) - проверка типов
+- `@sindresorhus/is`, `isemail`, `is-svg`, `isstream`, `is-glob`, `is-dotfile`, `is-absolute`, `is-relative`, `is-stream`, `is-buffer` (в т.ч. для браузера) / `is-type-of` - проверка типов
 - `fn-name` - извлекает имя функции
 - `mimic-fn` - функция прикидывается другой функцией (вплоть до имени и свойств), полезно для обёрток по типу `once`, `mem`, etc
 - `kind-of` - замена typeof
@@ -698,9 +701,6 @@ app.set('x-powered-by', false);
 - `internal` - созданице цепочки тасков, как у Nightmare
 - `archiver` - архиватор
 - `ffi` - работа с системными библиотеками без написания c++ обёрток
-- `shelljs` - cli/bash-функции прямо в ноде
-- `cash` - кроссплатформенные shell-команды, в cli и в самой ноде
-- `shx` - кроссплатформенные bash-функции в скриптах `package.json` (обёртка над `shelljs`)
 - `is-ci` - проверяет, запущен ли процесс в ci-окружении
 - `is-ci-cli` - позволяет для разных ci-окружений запускать разные npm-скрипты
 - `is-wsl` - запущен ли процесс из под Windows Subsystem for Linux
