@@ -1017,6 +1017,8 @@ app.set('x-powered-by', false);
 - `vue-class-component` , `vue-property-decorator`
 - `v-runtime-template`
 - `epic-spinners` - набор спиннеров-лоадеров, чисто под vue
+- `vue-ripple-directive`
+- `vuejs-paginate`
 - [Как правильно публиковать](https://pablohpsilva.github.io/vuejs-component-style-guide/#/russian) [vue-компоненты](https://vuejsdevelopers.com/2017/07/31/vue-component-publish-npm/)
 - `vuera` - React во Vue, Vue в React'е
 
@@ -1056,6 +1058,7 @@ app.set('x-powered-by', false);
 - `bounding-client-rect`
 - `mutation-observer`
 - `intersection-observer` ([описание конфигурации](https://habrahabr.ru/post/348030/))
+- `loading-attribute-polyfill` - `[loading="lazy"]` аттрибут
 - `ric-shim` - requestIdleCallback
 - `current-script-polyfill` - `document.currentScript` для ишаков
 - `shim-keyboard-event-key` - `KeyboardEvent.key` для ишаков и Edge
@@ -1077,6 +1080,14 @@ app.set('x-powered-by', false);
 
 [Полифиллы, которые использовал github](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/#polyfills)
 [Список всех возможных WebApi](https://developer.mozilla.org/en-US/docs/Web/API)
+
+## Клиентская оптимизация
+
+- [Оптимизация изображений](https://developers.google.com/web/tools/lighthouse/audits/optimize-images)
+- [Адаптивные изображения](https://developer.mozilla.org/ru/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Lazy load](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
+- [Много статей на тему оптимизации и ускорения загрузки](https://web.dev/fast)
+- [`@media(pointer: fine|coarse)`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 
 ## nginx
 
