@@ -1,6 +1,8 @@
 require('./bootstrap');
 const { join } = require('path');
 
+// todo: `knex-db-manager`
+
 const KNEX_DATA_DIR = process.env.KNEX_CREATOR ? './src' : './dist';
 /**
  * @param {string} path
