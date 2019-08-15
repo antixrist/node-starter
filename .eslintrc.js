@@ -278,9 +278,9 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       2,
       {
-        devDependencies: true,
+        devDependencies: false,
         optionalDependencies: true,
-        peerDependencies: false,
+        peerDependencies: true,
       },
     ],
     'import/no-internal-modules': 0,
@@ -373,6 +373,7 @@ module.exports = {
     'unicorn/no-fn-reference-in-iterator': 1, // fixable
     'unicorn/no-for-loop': 1, // fixable
     'unicorn/no-hex-escape': 1, // fixable
+    'unicorn/no-keyword-prefix': 0,
     'unicorn/no-new-buffer': 0, // fixable, prefer to 'node/no-deprecated-api'
     'unicorn/no-process-exit': 2,
     'unicorn/no-unreadable-array-destructuring': 2,
